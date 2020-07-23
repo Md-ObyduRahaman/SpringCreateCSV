@@ -14,17 +14,16 @@ import com.example.model.Student;
 import com.example.repo.StudentRepo;
 
 @RestController
-public class StudentCSVDownload 
-{
+public class StudentCSVDownload {
 	@Autowired
 	private StudentRepo studentRepo;
-	
+
 	@GetMapping("/download/student.csv")
-	public void downloadCSV(HttpServletResponse response)throws IOException
-	{
+	public void downloadCSV(HttpServletResponse response) throws IOException {
 		response.setContentType("text/csv");
 		response.setHeader("Content-Display", "attachment; file = student.csv");
-		List<Student> list = (List<Student>)studentRepo.findAll();
+		List<Student> list = studentRepo.findAll();
 		WriteDataToCSV.writeToCSV(response.getWriter(), list);
+
 	}
 }

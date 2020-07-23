@@ -8,6 +8,7 @@ public class SpringBootCreateApacheCommonsCsvApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootCreateApacheCommonsCsvApplication.class, args);
+		System.out.println("sojib");
 	}
 
 }
